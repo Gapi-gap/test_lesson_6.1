@@ -1,6 +1,7 @@
-import org.junit.Test;
+package ru.netology.stats.infostatistics;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
-import ru.netology.stats.infostatistics.Statistics;
+
 
 public class StatisticsTest {
     @Test

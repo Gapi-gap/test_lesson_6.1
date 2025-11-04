@@ -17,17 +17,21 @@
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <artifactId>junit-jupiter-api</artifactId> <!-- Лучше явно указать API -->
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId> <!-- И движок -->
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Если у тебя был просто <artifactId>junit-jupiter</artifactId>,
+             можешь убрать его, если добавил api и engine явно. -->
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -35,6 +39,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
+
                     <failIfNoTests>true</failIfNoTests>
                 </configuration>
             </plugin>
