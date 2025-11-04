@@ -21,7 +21,7 @@ public class Statistics {
         long max = Long.MIN_VALUE;
         int mother = -1;
         for (int i = 0; i < sales.length; ++i) {
-            if (max < sales[i]) {
+            if (max <= sales[i]) {
                 max = sales[i];
                 mother = i;
             }

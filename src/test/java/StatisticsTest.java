@@ -26,7 +26,7 @@ public class StatisticsTest {
         Statistics objStatistics = new Statistics();
         int[] sales = {22, 75, 44, 55, 33, 11, 15, 35, 64, 75, 25, 75};
         int index = objStatistics.PeakSales(sales);
-        double expected = 2;
+        double expected = 12;
         Assertions.assertEquals(expected, index);
     }
 
