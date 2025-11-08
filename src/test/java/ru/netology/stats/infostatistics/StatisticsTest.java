@@ -1,60 +1,61 @@
 package ru.netology.stats.infostatistics;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 
 public class StatisticsTest {
     @Test
-    public void GeneralTestForTheSumOfAllSales() {
+    public void generalTestForTheSumOfAllSales() {
         Statistics objStatistics = new Statistics();
-        int[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
-        long sum = objStatistics.TotalSales(sales);
-        int expected = 479;
+        long[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
+        long sum = objStatistics.totalSales(sales);
+        long expected = 479;
         Assertions.assertEquals(expected, sum);
     }
 
     @Test
-    public void GeneralTestForTheAverageOfAllSales() {
+    public void generalTestForTheAverageOfAllSales() {
         Statistics objStatistics = new Statistics();
-        int[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
-        long sum = objStatistics.AverageSales(sales);
+        long[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
+        long sum = objStatistics.averageSales(sales);
         double expected = 39;
         Assertions.assertEquals(expected, sum);
     }
 
     @Test
-    public void MaximumSalesInTheMonth() {
+    public void maximumSalesInTheMonth() {
         Statistics objStatistics = new Statistics();
-        int[] sales = {22, 75, 44, 55, 33, 11, 15, 35, 64, 75, 25, 75};
-        int index = objStatistics.PeakSales(sales);
-        double expected = 12;
+        long[] sales = {22, 75, 44, 55, 33, 11, 15, 35, 64, 75, 25, 75};
+        int index = objStatistics.peakSales(sales);
+        int expected = 12;
         Assertions.assertEquals(expected, index);
     }
 
     @Test
-    public void MinimumSalesInTheMonth() {
+    public void minimumSalesInTheMonth() {
         Statistics objStatistics = new Statistics();
-        int[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 11};
-        long index = objStatistics.MinimumSales(sales);
-        double expected = 12;
+        long[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 11};
+        int index = objStatistics.minimumSales(sales);
+        int expected = 12;
         Assertions.assertEquals(expected, index);
     }
 
     @Test
-    public void TheNumberTheMonthsIsGreaterThanAverage() {
+    public void theNumberTheMonthsIsGreaterThanAverage() {
         Statistics objStatistics = new Statistics();
-        int[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
-        long count = objStatistics.NumberMonthsAboveAverage(sales);
-        double expected = 5;
+        long[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
+        int count = objStatistics.numberMonthsAboveAverage(sales);
+        int expected = 5;
         Assertions.assertEquals(expected, count);
     }
 
     @Test
-    public void NumberOfMonthsLessThanAverage() {
+    public void numberOfMonthsLessThanAverage() {
         Statistics objStatistics = new Statistics();
-        int[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
-        long count = objStatistics.NumberMonthsLessThatAverage(sales);
-        double expected = 7;
+        long[] sales = {22, 33, 44, 55, 66, 11, 15, 35, 64, 34, 25, 75};
+        int count = objStatistics.numberMonthsLessThatAverage(sales);
+        int expected = 7;
         Assertions.assertEquals(expected, count);
     }
 }

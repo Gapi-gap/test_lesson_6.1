@@ -1,7 +1,7 @@
 package ru.netology.stats.infostatistics;
 
 public class Statistics {
-    public long TotalSales(int[] sales) {
+    public long totalSales(long[] sales) {
         long sumSales = 0;
         for (int i = 0; i < sales.length; ++i) {
             sumSales += sales[i];
@@ -9,15 +9,15 @@ public class Statistics {
         return sumSales;
     }
 
-    public long AverageSales(int[] sales) {
+    public long averageSales(long[] sales) {
         long sumSales = 0;
         for (int i = 0; i < sales.length; ++i) {
             sumSales += sales[i];
         }
-        return (int) sumSales / sales.length;
+        return (long) sumSales / sales.length;
     }
 
-    public int PeakSales(int[] sales) {
+    public int peakSales(long[] sales) {
         long max = Long.MIN_VALUE;
         int mother = -1;
         for (int i = 0; i < sales.length; ++i) {
@@ -29,7 +29,7 @@ public class Statistics {
         return mother + 1;
     }
 
-    public int MinimumSales(int[] sales) {
+    public int minimumSales(long[] sales) {
         long min = Long.MAX_VALUE;
         int mother = 0;
         for (int i = 0; i < sales.length; ++i) {
@@ -41,8 +41,8 @@ public class Statistics {
         return mother + 1;
     }
 
-    public int NumberMonthsAboveAverage(int[] sales) {
-        long average = AverageSales(sales);
+    public int numberMonthsAboveAverage(long[] sales) {
+        long average = averageSales(sales);
         int count = 0;
         for (int i = 0; i < sales.length; ++i) {
             if (average < sales[i]) {
@@ -52,8 +52,8 @@ public class Statistics {
         return count;
     }
 
-    public int NumberMonthsLessThatAverage(int[] sales) {
-        long average = AverageSales(sales);
+    public int numberMonthsLessThatAverage(long[] sales) {
+        long average = averageSales(sales);
         System.out.println(average);
         int count = 0;
         for (int i = 0; i < sales.length; ++i) {
